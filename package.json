@@ -1,0 +1,24 @@
+{
+  "name": "dangerous-html",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/lib.umd.js",
+  "module": "dist/lib.mjs",
+  "scripts": {
+    "test": "vite build && cp dist/lib.umd.js example/ && http-server example/",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JayaKrishnaNamburu/danerously-set-html/issues"
+  },
+  "homepage": "https://github.com/JayaKrishnaNamburu/danerously-set-html#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vite": "^3.1.8"
+  },
+  "dependencies": {
+    "lit": "^2.4.0"
+  }
+}

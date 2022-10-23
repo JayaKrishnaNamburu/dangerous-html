@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="./lib.umd.js" type="text/javascript"></script>
+        <style>
+            .back {
+                background: blue
+            }
+            
+            div {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="back">Outside container</div>
+    <dangerous-html html='<iframe width="560" height="315" src="https://www.youtube.com/embed/kxW62eMsw0k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'></dangerous-html>
+    <dangerous-html shadow="true" html='<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🥁 We’re extremely excited to announce our first investment round of $2.5 million in seed funding!<br><br>This is one big step in our mission to become the next-generation <a href="https://twitter.com/hashtag/lowcode?src=hash&amp;ref_src=twsrc%5Etfw">#lowcode</a> collaboration platform for <a href="https://twitter.com/hashtag/frontend?src=hash&amp;ref_src=twsrc%5Etfw">#frontend</a> development.<a href="https://t.co/0RVHH8Ayac">https://t.co/0RVHH8Ayac</a> <a href="https://t.co/cR0bSNt2Xw">pic.twitter.com/cR0bSNt2Xw</a></p>&mdash; teleportHQ (@teleportHQio) <a href="https://twitter.com/teleportHQio/status/1529868022978166786?ref_src=twsrc%5Etfw">May 26, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'></dangerous-html>
+    <dangerous-html html='<div class="back">Inside container</div>'></dangerous-html>
+    </body>
+</html>
