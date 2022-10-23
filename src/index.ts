@@ -12,7 +12,7 @@ export class DangerouslySetInnerHtmlContent extends LitElement {
 
   connectedCallback(): void {
     super.connectedCallback();
-    const slotHtml = document.createRange().createContextualFragment(this.html); // Create a 'tiny' document and parse the html string
+    const slotHtml = document.createRange().createContextualFragment(this.html);
     if (this.shadow) {
       this.shadowRoot.append(slotHtml);
       return;
