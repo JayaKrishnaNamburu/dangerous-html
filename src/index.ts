@@ -1,23 +1,20 @@
-import { LitElement } from "lit";
+import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
+import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
-@customElement("html-content")
+@customElement("dangerous-html")
 export class DangerouslySetInnerHtmlContent extends LitElement {
   @property() html: string;
+  @property() shadow = false;
+  root: ShadowRoot;
 
-  static shadowRootOptions = {
-    ...LitElement.shadowRootOptions,
-    mode: "open",
-  };
+  createRenderRoot() {
+    return this.shadow ? this.attachShadow({ mode: "open" }) : this;
+  }
 
-  connectedCallback() {
-    super.connectedCallback();
-    if (this.html) {
-      var slotHtml = document.createRange().createContextualFragment(this.html);
-      this.shadowRoot.innerHTML = "";
-      this.shadowRoot.appendChild(slotHtml);
-    }
+  render() {
+    return html`${unsafeHTML(this.html)}`;
   }
 }
 
-customElements.define("html-content", DangerouslySetInnerHtmlContent);
+customElements.define("dangerous-html", DangerouslySetInnerHtmlContent);
