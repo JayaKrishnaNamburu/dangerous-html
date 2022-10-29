@@ -1,12 +1,34 @@
 {
   "name": "dangerous-html",
-  "version": "0.1.0",
+  "version": "0.1.7",
   "description": "",
-  "main": "dist/lib.umd.js",
-  "module": "dist/lib.mjs",
+  "main": "dist/default/lib.js",
+  "module": "dist/default/lib.mjs",
+  "unpkg": "dist/default/lib.umd.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/default/lib.mjs",
+      "require": "./dist/default/lib.js",
+      "umd": "./dist/default/lib.umd.js"
+    },
+    "./react": {
+      "import": "./dist/react/lib.mjs",
+      "require": "./dist/react/lib.js",
+      "umd": "./dist/react/lib.umd.js"
+    },
+    "./vue": {
+      "import": "./dist/vue/lib.mjs",
+      "require": "./dist/vue/lib.js",
+      "umd": "./dist/vue/lib.umd.js"
+    }
+  },
   "scripts": {
-    "test": "vite build && cp dist/lib.umd.js example/ && http-server example/",
-    "build": "vite build"
+    "test": "yarn build && cp dist/default/lib.umd.js example/ && http-server example/",
+    "build": "yarn build:umd && yarn build:mod && yarn build:react && yarn build:vue",
+    "build:umd": "vite build",
+    "build:react": "vite build -c vite.config-react.js",
+    "build:vue": "vite build -c vite.config-vue.js",
+    "build:mod": "vite build -c vite.config-mod.js"
   },
   "author": "",
   "license": "MIT",
@@ -15,10 +37,23 @@
   },
   "homepage": "https://github.com/JayaKrishnaNamburu/danerously-set-html#readme",
   "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.0.0",
     "http-server": "^14.1.1",
-    "vite": "^3.1.8"
+    "lit": "^2.4.0",
+    "react": "^18.2.0",
+    "vite": "^3.1.8",
+    "vue": "^2.7.0"
   },
-  "dependencies": {
-    "lit": "^2.4.0"
+  "peerDependencies": {
+    "react": "^17.x",
+    "vue": "^2.x"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
   }
 }
