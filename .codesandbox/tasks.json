@@ -1,0 +1,24 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "yarn build": {
+      "name": "yarn build",
+      "command": "yarn build"
+    },
+    "yarn": {
+      "name": "yarn",
+      "command": "yarn"
+    },
+    "yarn build:vue": {
+      "name": "yarn build:vue",
+      "command": "yarn build:vue"
+    },
+    "yarn test": {
+      "name": "yarn test",
+      "command": "yarn test"
+    }
+  }
+}
