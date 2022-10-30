@@ -7,7 +7,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/embed.ts"),
       name: "DangerousHTML",
       fileName: "default/lib",
-      formats: ["umd"],
+      formats: ["umd", "es", "cjs"],
     },
   },
 });
