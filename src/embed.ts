@@ -8,7 +8,6 @@ export class DangerouslySetInnerHtmlContent extends LitElement {
   @property() declare shadow: boolean;
 
   createRenderRoot() {
-    console.log(this.shadow)
     return this.shadow ?  this.attachShadow({ mode: "open" }) : this 
   }
 

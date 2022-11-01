@@ -1,6 +1,6 @@
 {
   "name": "dangerous-html",
-  "version": "0.1.7",
+  "version": "0.1.10",
   "description": "",
   "main": "dist/default/lib.js",
   "module": "dist/default/lib.mjs",
