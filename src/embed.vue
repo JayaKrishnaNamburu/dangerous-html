@@ -1,5 +1,5 @@
 <template>
-  <div ref="wrapper"></div>
+  <div :style="{ display: 'contents' }" ref="wrapper"></div>
 </template>
 
 <script>

@@ -11,7 +11,7 @@ const DangerousHTML = ({ html }) => {
     ref.current.append(slotHtml);
   }, []);
 
-  return <div ref={ref}></div>;
+  return <div style={{ display: 'contents' }} ref={ref}></div>;
 };
 
 export default DangerousHTML;
