@@ -1,10 +1,10 @@
 {
   "name": "dangerous-html",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "",
   "main": "dist/default/lib.js",
   "module": "dist/default/lib.mjs",
-  "unpkg": "dist/default/lib.umd.mjs",
+  "unpkg": "dist/default/lib.umd.js",
   "exports": {
     ".": {
       "import": "./dist/default/lib.mjs",
