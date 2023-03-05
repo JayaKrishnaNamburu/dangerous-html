@@ -8,19 +8,20 @@ export class DangerouslySetInnerHtmlContent extends LitElement {
   @property() declare shadow: boolean;
 
   createRenderRoot() {
-    return this.shadow ?  this.attachShadow({ mode: "open" }) : this
+    return this.shadow ? this.attachShadow({ mode: "open" }) : this;
   }
 
   connectedCallback(): void {
     super.connectedCallback();
     const slotHtml = document.createRange().createContextualFragment(this.html);
+    window.addEventListener("load", () => {
+      if (this.shadow) {
+        this.shadowRoot.append(slotHtml);
+        return;
+      }
 
-    if (this.shadow) {
-    this.shadowRoot.append(slotHtml);
-      return;
-    }
-
-    this.style.display = 'contents'
-    this.append(slotHtml);
+      this.style.display = "contents";
+      this.append(slotHtml);
+    });
   }
 }
